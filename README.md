@@ -12,7 +12,18 @@ Invalidate CloudFront caches for a bucket.
 ## Motivation
 
 ```ts
-...
+import { lookup, invalidate } from "s3-invalidate-cloudfront";
+
+lookup("bucket-name").then(
+    (caches) => Promise.all(caches.map(invalidate))
+);
+```
+
+```bash
+> s3-invalidate-cloudfront bucket-name
+
+Deleted distribution-1 at path /*
+Deleted distribution-2 at path /images/*
 ```
 
 ## Installing
@@ -26,7 +37,7 @@ To make the cli accessible install the package globally with the `-g` flag or in
 ## Usage
 
 ```ts
-...
+s3-invalidate-cloudfront bucket-name
 ```
 
 ### CLI
@@ -42,12 +53,7 @@ Positionals:
 Options:
   -h, --help     Show help           [boolean]
   -v, --version  Show version number [boolean]
-```
-
-#### Examples
-
-```bash
-...
+  -d, --dry-run  Dry run             [boolean]
 ```
 
 ## Tooling
