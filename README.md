@@ -6,8 +6,8 @@ Invalidate CloudFront caches for a bucket.
 ![Version](https://img.shields.io/npm/v/s3-invalidate-cloudfront)
 ![Downloads](https://img.shields.io/npm/dw/s3-invalidate-cloudfront)
 ![Size](https://img.shields.io/bundlephobia/min/s3-invalidate-cloudfront)
-![Quality](https://img.shields.io/codacy/grade/...)
-![Coverage](https://img.shields.io/codacy/coverage/...)
+![Quality](https://img.shields.io/codacy/grade/58c781082a8a402baa12bffe087f66d0)
+![Coverage](https://img.shields.io/codacy/coverage/58c781082a8a402baa12bffe087f66d0)
 
 ## Motivation
 

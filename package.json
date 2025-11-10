@@ -7,9 +7,7 @@
   "repository": "https://github.com/joellefkowitz/s3-invalidate-cloudfront",
   "homepage": "https://joellefkowitz.github.io/s3-invalidate-cloudfront",
   "main": "dist/index.js",
-  "bin": {
-    "s3-invalidate-cloudfront": "dist/main.js"
-  },
+  "bin": "dist/main.js",
   "files": [
     "dist"
   ],
