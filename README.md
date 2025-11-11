@@ -14,16 +14,16 @@ Invalidate CloudFront caches for a bucket.
 After uploading to an S3 bucket I need to invalidate the CloudFront cache:
 
 ```bash
-> aws s3 sync src/ s3://<bucket-name>
-> aws cloudfront create-invalidation --distribution-id <cloudfront-distribution-id> --paths "/*"
+> aws s3 sync src/ s3://bucket-name
+> aws cloudfront create-invalidation --distribution-id cloudfront-distribution-id --paths "/*"
 ```
 
 The AWS cli only accepts distribution IDs which then have to be hardcoded. It would be much more ergonomic to lookup the matching distribution IDs based on the bucket name:
 
 ```bash
-> s3-invalidate-cloudfront <bucket-name>
+> s3-invalidate-cloudfront bucket-name
 
-Deleted <cloudfront-distribution-id> at path /*
+Deleted cloudfront-distribution-id at path /*
 ```
 
 Benefits:
