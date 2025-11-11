@@ -18,7 +18,7 @@ After uploading to an S3 bucket I need to invalidate the CloudFront cache:
 > aws cloudfront create-invalidation --distribution-id cloudfront-distribution-id --paths "/*"
 ```
 
-The AWS cli only accepts distribution IDs which then have to be hardcoded. It would be much more ergonomic to lookup the matching distribution IDs based on the bucket name:
+The AWS cli only accepts distribution IDs which then have to be hardcoded. It would be much more ergonomic if I could lookup the matching distribution IDs based on the bucket name:
 
 ```bash
 > s3-invalidate-cloudfront bucket-name
@@ -31,17 +31,12 @@ Benefits:
 - Uses the bucket name which is recognisable and not allocated by AWS like the distribution ID
 - Simplifies invalidating caches for a bucket that has multiple cloudfront consumers
 
+I also want to programmatically invalidate caches:
+
 ```ts
 import { lookup, invalidate } from "s3-invalidate-cloudfront";
 
 lookup("bucket-name", "us-east-1").then((caches) => Promise.all(caches.map(invalidate)));
-```
-
-```bash
-> s3-invalidate-cloudfront bucket-name
-
-Deleted distribution-1 at path /*
-Deleted distribution-2 at path /images/*
 ```
 
 ## Installing
