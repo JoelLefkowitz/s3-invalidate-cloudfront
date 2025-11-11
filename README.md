@@ -14,9 +14,7 @@ Invalidate CloudFront caches for a bucket.
 ```ts
 import { lookup, invalidate } from "s3-invalidate-cloudfront";
 
-lookup("bucket-name").then(
-    (caches) => Promise.all(caches.map(invalidate))
-);
+lookup("bucket-name", "us-east-1").then((caches) => Promise.all(caches.map(invalidate)));
 ```
 
 ```bash
@@ -48,12 +46,13 @@ s3-invalidate-cloudfront <name>
 Invalidate CloudFront caches for a bucket.
 
 Positionals:
-  name
+  name                                                                  [string]
 
 Options:
-  -h, --help     Show help           [boolean]
-  -v, --version  Show version number [boolean]
-  -d, --dry-run  Dry run             [boolean]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]
+  -r, --region                                   [string] [default: "us-east-1"]
+  -d, --dry-run                                       [boolean] [default: false]
 ```
 
 ## Tooling
