@@ -1,7 +1,7 @@
 {
   "name": "s3-invalidate-cloudfront",
   "description": "Invalidate CloudFront caches for a bucket.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "author": "Joel Lefkowitz",
   "repository": "https://github.com/joellefkowitz/s3-invalidate-cloudfront",
