@@ -13,18 +13,18 @@ describe("cli", () => {
   });
 
   it("parses the region", () => {
-    expect(cli(["_", "--region", "us-east-2"]).region).toBe("us-east-2");
+    expect(cli(["name", "--region", "us-east-2"]).region).toBe("us-east-2");
   });
 
   it('defaults the region to "us-east-1"', () => {
-    expect(cli(["_"]).region).toBe("us-east-1");
+    expect(cli(["name"]).region).toBe("us-east-1");
   });
 
   it("parses the dry-run flag", () => {
-    expect(cli(["_", "--dry-run"]).dry).toBe(true);
+    expect(cli(["name", "--dry-run"]).dry).toBe(true);
   });
 
   it("defaults dry-run flag to false", () => {
-    expect(cli(["_"]).dry).toBe(false);
+    expect(cli(["name"]).dry).toBe(false);
   });
 });
