@@ -61,13 +61,13 @@ s3-invalidate-cloudfront <name>
 Invalidate CloudFront caches for a bucket.
 
 Positionals:
-  name                                                                  [string]
+  name  The bucket name                                           [string]
 
 Options:
-  -h, --help     Show help                                             [boolean]
-  -v, --version  Show version number                                   [boolean]
-  -r, --region                                   [string] [default: "us-east-1"]
-  -d, --dry-run                                       [boolean] [default: false]
+  -h, --help     Show help                                       [boolean]
+  -v, --version  Show version number                             [boolean]
+  -r, --region   Set the AWS region        [string] [default: "us-east-1"]
+  -d, --dry-run  Don't make any changes         [boolean] [default: false]
 ```
 
 ## Tooling

@@ -21,15 +21,18 @@ export const cli = (argv: string[]) =>
           yargs
             .positional("name", {
               type: "string",
+              description: "The bucket name",
               demandOption: true,
             })
             .option("region", {
               type: "string",
+              description: "Set the AWS region",
               alias: "r",
               default: "us-east-1",
             })
             .option("dry-run", {
               type: "boolean",
+              description: "Don't make any changes",
               alias: "d",
               default: false,
             }),
@@ -38,5 +41,6 @@ export const cli = (argv: string[]) =>
       .version()
       .alias("help", "h")
       .alias("version", "v")
+      .wrap(Math.min(yargs().terminalWidth(), 120))
       .parseSync(),
   );
